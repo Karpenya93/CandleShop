@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Candle>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Список свечей (название , цена , описание продукции)</h1>
+
+<table class="table table-bordered table-striped" style="windh:100%">
+    <thead>
+        <tr>
+            <th>
+                Candle name
+            </th>
+            <th>
+                Price order
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="20%">
+                    @obj.Name
+
+                </td>
+                <td width="30%">
+                    @obj.Price
+                </td>
+                <td width="50%">
+                    @obj.Description
+                </td>
+                <td>
+                    <a class="btn btn-primary" href="#">Добавить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
